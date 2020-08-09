@@ -172,4 +172,3 @@ $RECYCLE.BIN/
 #custom ignores by Newton
 rest.http
 src/database/*.sqlite
-src/config/config.env
