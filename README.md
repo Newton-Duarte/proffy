@@ -2,6 +2,27 @@
 
 Sua plaforma de estudos online.
 
+#### Screenshots
+
+Demonstration
+![Proffy](/screenshots/proffy-demo.gif)
+
+Home
+![Proffy Home](/screenshots/01proffy-home.jpg)
+
+Login
+![Proffy Login](/screenshots/06proffy-login.jpg)
+
+TeacherList
+![Proffy Teacher List](/screenshots/02proffy-study.jpg)
+![Proffy Teacher List](/screenshots/03proffy-teacher.jpg)
+
+Register
+![Proffy Register](/screenshots/04proffy-register.jpg)
+
+Classes
+![Proffy Classes](/screenshots/05proffy-classes.jpg)
+
 #### Setup
 
 Clone the project
@@ -62,6 +83,8 @@ npm start
 
 http://localhost:3333/classes
 http://localhost:3333/connections
+http://localhost:3333/register
+http://localhost:3333/login
 
 #### How the endpoints works
 
@@ -77,6 +100,32 @@ Get total connections
 
 `GET http://localhost:3333/connections`
 
+###### POST Login
+`GET http://localhost:3333/login`
+
+Body:
+```javascript
+{
+  "email": "test@test.com",
+  "password": "password"
+}
+```
+
+###### POST Register
+`GET http://localhost:3333/register`
+
+Body:
+```javascript
+{
+  "name": "Newton Duarte",
+  "email": "test@test.com",
+  "password": "password",
+  "avatar": "https://avatars0.githubusercontent.com/u/15693392?s=460&v=4",
+  "whatsapp": "82000000000",
+  "bio": "Graduado em Sistemas de Informação pela Faculdade de Alagoas, possui vivência em desenvolvimento web."
+}
+```
+
 ###### POST Classes
 Create classes
 
@@ -84,15 +133,13 @@ Create classes
 
 Headers:
 `Content-Type: application/json`
+`Authorization: <token>`
 
 Body:
 ```javascript
 {
-  "name": "Newton Duarte",
-  "avatar": "https://avatars0.githubusercontent.com/u/15693392?s=460&v=4",
-  "whatsapp": "82000000000",
-  "bio": "Graduado em Sistemas de Informação pela Faculdade de Alagoas, possui vivência em desenvolvimento web.",
-  "subject": "Inglês",
+  "user_id": 1,
+  "subject": "English",
   "cost": 80,
   "schedule": [
     { "week_day": 1, "from": "8:00", "to": "12:00" },
