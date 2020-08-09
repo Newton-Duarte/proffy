@@ -39,7 +39,7 @@ function Login() {
         const { access_token } = data;
         api.defaults.headers.common['Authorization'] = access_token;
         localStorage.setItem('access_token', access_token);
-        history.push('/study');
+        history.push('/give-classes');
       })
       .catch(() => alert('Erro no login!'));
   }
@@ -77,7 +77,7 @@ function Login() {
 
           <footer>
             <button type="submit">
-              Salvar cadastro
+              Entrar
             </button>
           </footer>
         </form>
