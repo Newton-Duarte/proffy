@@ -37,6 +37,17 @@
   width: 90%;
 }
 
+.no-results {
+  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.no-results img {
+  margin-right: .8rem;
+}
+
 @media (min-width: 700px) {
   #page-teacher-list {
     max-width: 100%;

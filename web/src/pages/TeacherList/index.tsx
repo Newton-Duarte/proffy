@@ -6,6 +6,7 @@ import Select from '../../components/Select';
 
 import './styles.css';
 import TeacherItem, { Teacher } from '../../components/TeacherItem';
+import warningIcon from '../../assets/images/icons/warning.svg';
 import api from '../../services/api';
 
 function TeacherList() {
@@ -78,9 +79,13 @@ function TeacherList() {
       </PageHeader>
 
       <main>
-        {teachers.map((teacher: Teacher) => {
-          return <TeacherItem key={teacher.id} teacher={teacher} />
-        })}
+        {teachers.length
+          ? teachers.map((teacher: Teacher) => <TeacherItem key={teacher.id} teacher={teacher} />)
+          : <h4 className="no-results">
+              <img src={warningIcon} alt="Warning icon"/>
+              Comece informando a matéria o dia da semana e o horário que deseja estudar.
+            </h4>
+        }
       </main>
     </div>
   )

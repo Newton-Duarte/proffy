@@ -36,7 +36,7 @@ export default class AuthController {
 
     const token = jwt.sign({ user_id }, process.env.JWT_SECRET || '');
 
-    return response.header('auth-token', token).json({ success: true, access_token: token });
+    return response.header('auth-token', token).json({ success: true, user_id, access_token: token });
   }
 
   async login(request: Request, response: Response) {

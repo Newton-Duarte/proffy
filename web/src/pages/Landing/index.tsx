@@ -16,7 +16,7 @@ function Landing() {
 
   useEffect(() => {
     api.get('connections').then(res => setTotalConnections(res.data.total));
-  }, [])
+  }, []);
 
   return (
     <div id="page-landing">
@@ -38,7 +38,7 @@ function Landing() {
             Estudar
           </Link>
 
-          <Link to="/give-classes" className="give-classes">
+          <Link to="/register" className="give-classes">
             <img src={giveClassesIcon} alt="Dar aulas"/>
             Dar aulas
           </Link>
